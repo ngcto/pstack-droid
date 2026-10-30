@@ -34,7 +34,7 @@ Ordinary terminal/browser work prefers Droid's built-in `tuistory` and `agent-br
 
 Droid children cannot spawn Task, so the parent owns flattened dispatch graphs. Cursor Task model/cloud fields and effort-bearing model slugs are translated to native role droids and explicit isolation decisions. No automatic cloud VM, Cursor Project store, event subscription or credential API is claimed. Benny is preserved but not activated. Source autonomy wording never expands user authorization.
 
-See [Droid setup and usage](pstack/README-DROID.md), [harness contract](pstack/DROID-ADAPTER.md), [actual validation and skips](pstack/VALIDATION.md), and the original [upstream guide](pstack/docs/guide/README.md). Source attribution and licenses remain in the plugin and pristine tree.
+See [Droid setup and usage](harness/pstack/droid/README-DROID.md), [harness contract](adapters/droid/DROID-ADAPTER.md), [actual validation and skips](adapters/droid/VALIDATION.md), and the original [upstream guide](upstream/pstack/docs/guide/README.md). Source attribution and licenses remain in the plugin and pristine tree.
 
 ## Generated harness tree
 
@@ -51,8 +51,18 @@ The generator classifies harness terms across each skill and its supporting Mark
 ## Offline checks
 
 ```sh
-python pstack/scripts/pstack-droid.py verify
-python pstack/tests/test_port.py
+python harness/pstack/droid/scripts/pstack-droid.py verify
+python tests/test_generation.py
 ```
 
 These prove packaging/adapter checks, not authenticated model behavior. Real coding and multi-model integration await user login and account entitlement. No secrets, login state, private session history, or runtime dependencies are distributed.
+
+## Repository layout
+
+- `upstream/`: pinned original source and licenses.
+- `adapters/droid/`: shared adapter and necessary compatibility overlays.
+- `scripts/`: deterministic generator.
+- `harness/pstack/droid/`: generated installable plugin.
+- `tests/`: generation, preservation and drift checks.
+
+There is no root `pstack/` port copy.

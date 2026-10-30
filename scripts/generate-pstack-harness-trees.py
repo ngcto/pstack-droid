@@ -10,8 +10,8 @@ import stat
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / 'pstack/assets/upstream/pstack'
-PORT = ROOT / 'pstack'
+SOURCE = ROOT / 'upstream/pstack'
+PORT = ROOT / 'adapters/droid'
 OUT = ROOT / 'harness/pstack/droid'
 ADAPTER = 'docs/harness/droid.md'
 REVISION = json.loads((PORT/'preservation-manifest.json').read_text())['revision']
@@ -105,9 +105,9 @@ def render():
         body = text[end+4:].lstrip('\n')
         prelude = 'Read the Droid adapter and full role contract using absolute plugin paths supplied by the parent. Translate all Cursor names with that adapter. No nested Task; return required fan-out to the parent.\n\n'
         add(f'droids/{name}.md',fm+'\n\n'+prelude+body)
-    for path in walk(PORT/'assets/upstream/deslop'):
-        add('skills/deslop/'+path.relative_to(PORT/'assets/upstream/deslop').as_posix(),path.read_bytes(),bool(path.stat().st_mode & 0o111))
-    add('licenses/TEAM-KIT-LICENSE',(PORT/'assets/upstream/TEAM-KIT-LICENSE').read_bytes())
+    for path in walk(ROOT/'upstream/deslop'):
+        add('skills/deslop/'+path.relative_to(ROOT/'upstream/deslop').as_posix(),path.read_bytes(),bool(path.stat().st_mode & 0o111))
+    add('licenses/TEAM-KIT-LICENSE',(ROOT/'upstream/TEAM-KIT-LICENSE').read_bytes())
     # Only owned, reviewed compatibility patches are overlays.
     rel='skills/poteto-mode/scripts/worktree-audit.sh'
     add(rel,(PORT/rel).read_bytes(),True)

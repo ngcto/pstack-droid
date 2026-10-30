@@ -10,7 +10,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python pstack/scripts/pstack-droid.py verify
-      - run: python pstack/tests/test_port.py
       - run: python scripts/generate-pstack-harness-trees.py --check
       - run: python tests/test_generation.py
