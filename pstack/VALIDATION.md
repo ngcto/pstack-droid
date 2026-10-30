@@ -6,7 +6,7 @@
 - Native `pstack@droid-pstack-marketplace` accepted by plugin manager and read back Enabled at user scope.
 - Official `droid-control@factory-plugins` and `droid-evolved@factory-plugins` installed and read back Enabled, official revision `8a5f8db2e350`.
 - Source revision `4dd1d05818d19792e7cd6e818f1667f95f7e1dbe`; pristine copy exact file set and SHA-256 verification PASS for all 573 files. Installed cache preservation check also PASS.
-- 58 original top-level skills retained; four additions (deslop, native control-cli/control-ui, create-skill bridge) produce 62 active top-level skills. Two original role contracts adapted and six model/policy variants yield eight custom droids.
+- 58 original top-level skills retained; four additions (deslop, native control-cli/control-ui, create-skill bridge) produce 62 active top-level skills. Two original role contracts adapted with model inheritance; no model-pinned variants are shipped.
 - Six additive port unit checks passed. All relative Markdown links from skill entries resolved in the offline verifier.
 - Native command-policy validation executed: three active builtins, zero invalid/failed rules.
 

@@ -28,19 +28,19 @@ Discover session metadata through the available native session-navigation tools 
 
 One parent message, three Task calls to report-only role droids. Reviewers need narrowly granted read-only MCP access for cited tickets, chat threads and observability traces. Verify exact tool policy; parent-provided reads are permitted when the connector cannot be exposed safely. The parent launches all Task calls, records task IDs and waits for automatically delivered completed reports at each phase barrier. Launch acknowledgements are not findings. No child spawns Task or shell-launches nested droids. When only reports remain, end the turn; do not poll or block on TaskOutput.
 
-Read the role entries in `~/.factory/pstack/models.json` explicitly; this is an adapter preferences ledger, not an automatically applied rule. Resolve each seat to an installed native droid as defined in `DROID-ADAPTER.md`: Claude `pstack-claude`, Grok `pstack-grok`, OpenAI `pstack-openai`, with `-readonly` for report-only work. Use approved configured variants for other model/effort choices, never a Task model override. An `auto` or `inherit-parent` seat needs a verified inherit droid without a complexity override, not the Factory Auto router. Verify the effective model family before claiming diversity; names and advertised IDs alone are not evidence. Keep every repeated seat. If a configured droid is unavailable, disclose it, try its family default, then an available validated same-family variant; never retry a known-rejected target. Use only the calling workflow's explicit fallback if that fails.
+Use Droid built-in `worker` for implementation, adversarial repros and evidence gathering that needs commands/MCP; use `explorer` for source-only read-only exploration. Select `complexity: light|medium|heavy` for task difficulty; actual models/reasoning come from the user’s native `/settings` → Subagents configuration. Pass complete original role prompts, skill/payload paths and scope constraints. Never pin a provider/model or create model-specific custom droids/role ledgers. Preserve panel seat counts and ordered judge selection; record actual model families when a gate needs diversity, and report the gate unavailable if native routing does not supply it. The two original specialized role droids inherit native routing.
 
 | Lens | Role line | Default native droid | Prompt template |
 |---|---|---|---|
-| Judgment | `reflect judgment, divergent, synthesizer` | `pstack-claude-readonly` | `references/judgment-reviewer.md` |
-| Tooling | `reflect tooling` | `pstack-grok-readonly` | `references/tooling-reviewer.md` |
-| Divergent | `reflect judgment, divergent, synthesizer` | `pstack-claude-readonly` | `references/divergent-reviewer.md` |
+| Judgment | `reflect judgment, divergent, synthesizer` | `explorer` | `references/judgment-reviewer.md` |
+| Tooling | `reflect tooling` | `explorer` | `references/tooling-reviewer.md` |
+| Divergent | `reflect judgment, divergent, synthesizer` | `explorer` | `references/divergent-reviewer.md` |
 
 Pass each template verbatim, substituting the transcript path or digest where marked. Reviewers return findings in their automatically delivered completed Task reports.
 
 ## 3. Synthesize
 
-After all three complete reports, the parent launches one Task resolving `reflect judgment, divergent, synthesizer`, default `pstack-claude-readonly`. It spot-verifies citations through allowed read-only MCP tools or evidence supplied by the parent. Pass `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. It returns an Accepted / Rejected / Backlog list.
+After all three complete reports, the parent launches one Task resolving `reflect judgment, divergent, synthesizer`, default `explorer`. It spot-verifies citations through allowed read-only MCP tools or evidence supplied by the parent. Pass `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. It returns an Accepted / Rejected / Backlog list.
 
 ## 4. Structural enforcement check
 

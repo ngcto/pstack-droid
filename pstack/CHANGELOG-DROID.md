@@ -4,7 +4,7 @@ This is an additive native Factory Droid port of the complete pinned upstream ps
 
 ## Semantic adaptations
 
-- How, why, reflect, arena, swarm and interrogate resolve explicit native role droids through `~/.factory/pstack/models.json`, preserve repeated panel seats and ordered one-judge selection, and separate model/effort from Task calls. Account/model-family fallback is disclosed, never treated as proved diversity.
+- How, why, reflect, arena, swarm and interrogate use native worker/explorer and user-configured complexity routing. No provider-specific droids or custom model ledger is shipped. Panel counts and diversity evidence gates remain.
 - The parent owns all dispatches and continuation barriers. Teach, comment review, PR owners and conceptual sub-coordinators return plans/questions; the parent runs complete how/why/review graphs with original payloads. Background launch IDs are not completed verdicts; no Task polling or nested shell-launched droids.
 - Transcript discovery uses native metadata and actual export schema scoped to active workspace/session/topic/time. No Cursor UUID layout or message parser is assumed. Full trace requirements remain blocked if only excerpts are available; reflect retains its explicit digest fallback.
 - Native tuistory/agent-browser are for plain checks; official droid-control owns formal same-surface QA and captures. Worktrees do not claim fresh-machine isolation. Native Loop retains authorized cadence, predicates, replay safety and pause/cancel lifecycle without inventing dynamic event semantics.

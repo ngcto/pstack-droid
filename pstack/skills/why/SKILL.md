@@ -18,7 +18,7 @@ This is the Factory Droid port. Read `${DROID_PLUGIN_ROOT}/DROID-ADAPTER.md` bef
 
 Investigate the motivation and intent behind code. The companion `how` skill answers what the code does and how it works. `why` answers what forces led to its shape.
 
-Read the role entries in `~/.factory/pstack/models.json` explicitly; this is an adapter preferences ledger, not an automatically applied rule. Resolve each seat to an installed native droid as defined in `DROID-ADAPTER.md`: Claude `pstack-claude`, Grok `pstack-grok`, OpenAI `pstack-openai`, with `-readonly` for report-only work. Use approved configured variants for other model/effort choices, never a Task model override. An `auto` or `inherit-parent` seat needs a verified inherit droid without a complexity override, not the Factory Auto router. Verify the effective model family before claiming diversity; names and advertised IDs alone are not evidence. Keep every repeated seat. If a configured droid is unavailable, disclose it, try its family default, then an available validated same-family variant; never retry a known-rejected target. Use only the calling workflow's explicit fallback if that fails. Investigators resolve `why investigators` (default `pstack-grok-readonly`); synthesizers resolve `why synthesizer` (default `pstack-claude-readonly`). The parent launches all Task calls, records task IDs and waits for automatically delivered completed reports at each phase barrier. Launch acknowledgements are not findings. No child spawns Task or shell-launches nested droids. When only reports remain, end the turn; do not poll or block on TaskOutput.
+Use Droid built-in `worker` for implementation, adversarial repros and evidence gathering that needs commands/MCP; use `explorer` for source-only read-only exploration. Select `complexity: light|medium|heavy` for task difficulty; actual models/reasoning come from the user’s native `/settings` → Subagents configuration. Pass complete original role prompts, skill/payload paths and scope constraints. Never pin a provider/model or create model-specific custom droids/role ledgers. Preserve panel seat counts and ordered judge selection; record actual model families when a gate needs diversity, and report the gate unavailable if native routing does not supply it. The two original specialized role droids inherit native routing.
 
 Investigators and synthesizers are report-only. Discover the exact read-only MCP tool IDs each needs and confirm its droid policy allows them. Do not grant a whole write-capable server or switch to an unrestricted worker merely to get MCP access. If the policy lacks a required connector, the parent may perform the authorized read and pass evidence; otherwise record the category as unavailable.
 
@@ -56,7 +56,7 @@ Map each available MCP to one evidence category:
 
 Source control is always available through git and `gh`. For the other six, classify using the MCP name, server instructions, tool names, and resource descriptors. If an MCP could fit more than one category, choose the one matching its primary evidence. Record ambiguous cases in the coverage map.
 
-Spawn one investigator per category that has a matching MCP, all in a single message so they run concurrently, each owning exactly one tool or MCP. Don't ask one agent to cover multiple MCPs. Resolve the `why investigators` role, default `pstack-grok-readonly`.
+Spawn one investigator per category that has a matching MCP, all in a single message so they run concurrently, each owning exactly one tool or MCP. Don't ask one agent to cover multiple MCPs. Resolve the `why investigators` role, default `explorer`.
 
 Each investigator's prompt is `references/investigator-prompt.md` filled in, plus:
 - the category playbook `references/sources/<source>.md` for the selected MCP, adapted from the examples in `references/source-playbook.md`
@@ -86,7 +86,7 @@ If your scope assessment suggests a single-commit trivial target where the PR de
 
 ## Step 4. Synthesize
 
-After all investigator reports arrive, the parent spawns one synthesizer using `why synthesizer`, default `pstack-claude-readonly`. It gets:
+After all investigator reports arrive, the parent spawns one synthesizer using `why synthesizer`, default `explorer`. It gets:
 1. The investigator findings, including any null results and any categories skipped with justification
 2. The code anchor
 3. The user's original question

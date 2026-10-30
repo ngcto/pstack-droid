@@ -24,18 +24,9 @@ Use Skill for registered skills, Read for full files and payloads. Resolve DROID
 
 Task only accepts fields exposed by the installed schema. Do not send Cursor model, readonly, environment, or foreground controls. Choose subagent_type for enforced tools/model. Current CLI 1.0.0 Task is background and delivers completed reports automatically; stop a running task with TaskStop. Use TaskOutput only for a necessary progress peek or finished report, not a busy wait. Tool schema wins over documentation from another release.
 
-Default role mapping:
+Use Droid built-in `worker` for implementation, adversarial repros and evidence gathering that needs commands/MCP; use `explorer` for source-only read-only exploration. Select `complexity: light|medium|heavy` for task difficulty; actual models/reasoning come from the user’s native `/settings` → Subagents configuration. Pass complete original role prompts, skill/payload paths and scope constraints. Never pin a provider/model or create model-specific custom droids/role ledgers. Preserve panel seat counts and ordered judge selection; record actual model families when a gate needs diversity, and report the gate unavailable if native routing does not supply it. The two original specialized role droids inherit native routing.
 
-- Playbook code/helper delegates without a specified model: poteto-agent.
-- Explicit Claude judgment/prose/design/review seat: pstack-claude; read-only seat: pstack-claude-readonly.
-- Explicit Grok code/explorer/verification seat: pstack-grok; read-only seat: pstack-grok-readonly.
-- Explicit OpenAI seat: pstack-openai or pstack-openai-readonly.
-- generalPurpose with no model: worker, or explorer for hard read-only inspection.
-- Comment-only audit role: comment-sicko. It is report-only unless the exact authorized workflow calls for deleting comments; it must not write application logic.
-
-The panel count, role prompts, partitions, independent verifier and exact-SHA evidence remain unchanged. Different droid names inheriting the same model do not establish model diversity. The shipped pinned role droids use actual CLI-listed IDs claude-opus-5-5, grok-4.7, gpt-6.1-sol with high reasoning. These are advertised IDs, not proof the user's account is entitled. Custom-droid fallback can silently use the parent model if blocked/unconfigured; check actual model before claiming diversity. If unavailable, report the lost independent-model gate and use the original allowed fallback only.
-
-Cursor slugs bundle effort/speed; Droid separates model and reasoningEffort. Never pass claude-opus-5-5-xhigh or grok-4.7-xhigh-fast as a Droid model. setup-pstack maintains JSON role preferences and can create/update personal role droids after user approval; shipped plugin files remain unchanged. Task cannot override a droid's model in its call. High is the supported custom-droid effort in current public docs; max/xhigh budgeting cannot be assumed supported by its validator merely because exec accepts them.
+Original `poteto-agent` and `comment-sicko` retain role contracts with `model: inherit`; no explicit reasoning effort or provider preference is installed. Task complexity uses the user’s Light/Medium/Heavy models, and organization policy remains authoritative. `/setup-pstack` helps the user inspect/configure native Subagents settings rather than generating model definitions. Inherited defaults do not prove diverse-family review.
 
 ## Nested orchestration and isolation
 

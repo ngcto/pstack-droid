@@ -4,7 +4,7 @@ Read [DROID-ADAPTER.md](../../DROID-ADAPTER.md) before running active workflows.
 
 | Facility | Native procedure | Remaining acceptance boundary |
 |---|---|---|
-| Role models | Explicitly read `~/.factory/pstack/models.json`; resolve installed Claude/Grok/OpenAI role droids and report-only variants. Keep panel multiplicity and actual-family evidence. | Account entitlement, effective model/fallback and custom-droid effort support require post-login proof. CLI-listed IDs alone do not prove diversity. |
+| Role models | Built-in worker/explorer plus user-configured native Subagents Light/Medium/Heavy routing; specialized original roles inherit. No plugin model pins or private role ledger. | Actual model/family and diverse-review gates need post-login evidence; settings may route all tiers to the same family. |
 | Task fanout | Parent launches background tasks in one message, records IDs, receives automatic reports and advances phase barriers only after completion. | No nested Task, per-call model/read-only/environment fields or assumed Task fork. Conceptual coordinators plan/roll up; parent dispatches every leaf. |
 | Isolation | Parent prepares exact-SHA worktrees, scopes paths and reserves shared resources. | Fresh-machine requirements need an authorized verified remote computer/environment or disposable container. Local worktree is a reduced guarantee, not a VM. |
 | Plain checks | Native tuistory/agent-browser when exposed, with their current schemas. | Plain text/DOM snapshots do not replace formal same-surface QA, recordings or terminal byte/rendering evidence. |

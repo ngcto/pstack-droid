@@ -34,7 +34,7 @@ Infer the need from the message and the conversation. A named situation, such as
 
 Check the state that changes the answer, and mention it only when it does:
 
-- No `~/.factory/pstack/models.json` means `/setup-pstack` hasn't run for this user, so every role uses its shipped native default, with account entitlement and actual model resolution still to verify.
+- Native Subagents settings remain user-owned; pstack inherits current routing without provider-specific defaults.
 - No `verify-*` skill or other app harness in the project means agents have no scripted way to drive the app. Mention `/create-verification-skill` when the question is about proving a change works.
 - No formal verification skill in the project means no property is checked past what tests reach. Mention `/create-formal-verification-skill` when the question is about a race, an invariant, or another case tests rarely hit. When one exists and the code it covers changed after the commit it records as last in sync, mention `/maintain-formal-verification-skill` if the question touches that code.
 
@@ -46,7 +46,7 @@ When the model rule is missing and it matters, ask whether the user wants to pic
 ## Get set up
 
 1. Register the published marketplace with `droid plugin marketplace add https://github.com/ngcto/pstack-droid`, read back its actual registered name, then `droid plugin install pstack@<registered-name> --scope user` (or approved project scope). Verify with `droid plugin list` and the effective `/skills` and `/droids` catalogs.
-2. Run [`/setup-pstack`](../setup-pstack/SKILL.md). It asks for a reasoning budget, maps a model to each role, and writes `~/.factory/pstack/models.json` plus approved native model-role variants. Coordinators explicitly read the ledger and validate effective droids; it is not an automatically applied rule. Then it offers once each to generate a verification skill and a formal verification skill for the project, unless the project already has one.
+2. Run [`/setup-pstack`](../setup-pstack/SKILL.md) for guidance on native `/settings` → Subagents model/effort/autonomy configuration. No role ledger or model-specific droids are generated. It offers project verification/formal-verification skills once, only with acceptance.
 3. Start a real task with `/poteto-mode`, a goal, and a check that can pass or fail.
 
 Installing changes nothing until the user invokes a skill. Only `/setup-pstack` loads from the user's words. The [README](../../README.md) and [guide page 1](../../docs/guide/01-setup.md) have the details. Offer to word their first prompt with them, per [`references/prompting.md`](references/prompting.md).

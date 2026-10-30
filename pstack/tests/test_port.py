@@ -24,7 +24,11 @@ class PortTests(unittest.TestCase):
         self.assertTrue((ROOT/'.factory-plugin/plugin.json').is_file())
         self.assertFalse((ROOT/'.cursor-plugin').exists())
         self.assertFalse((ROOT/'agents').exists())
-        self.assertEqual(len(list((ROOT/'droids').glob('*.md'))), 8)
+        self.assertEqual({p.stem for p in (ROOT/'droids').glob('*.md')}, {'poteto-agent', 'comment-sicko'})
+        for path in (ROOT/'droids').glob('*.md'):
+            frontmatter = path.read_text().split('---', 2)[1]
+            self.assertIn('model: inherit', frontmatter)
+            self.assertNotIn('reasoningEffort:', frontmatter)
 
     def test_traversal_rejected(self):
         result = subprocess.run([sys.executable, str(ROOT/'scripts/pstack-droid.py'), 'run', '../bad.py'], capture_output=True)
