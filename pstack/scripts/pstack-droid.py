@@ -17,6 +17,15 @@ def sha(path):
 
 def verify(root=ROOT):
     manifest = json.loads((root / 'preservation-manifest.json').read_text())
+    if manifest.get('generated'):
+        receipt = json.loads((root / 'generated-manifest.json').read_text())
+        errors = []
+        for rel, entry in receipt.items():
+            path = root / rel
+            if not path.is_file() or sha(path) != entry['sha256'] or bool(path.stat().st_mode & 0o111) != entry['executable']:
+                errors.append(f'Generated file mismatch: {rel}')
+        print(json.dumps({'status': 'FAIL' if errors else 'PASS', 'revision': manifest['revision'], 'files': len(receipt), 'errors': errors}, indent=2))
+        return 1 if errors else 0
     upstream = root / 'assets/upstream/pstack'
     expected = {entry['path'] for entry in manifest['source_files']}
     actual = {str(p.relative_to(upstream)) for p in upstream.rglob('*') if p.is_file()}

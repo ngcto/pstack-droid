@@ -7,7 +7,7 @@
     {
       "name": "pstack",
       "description": "Full pstack workflows adapted for the Factory Droid harness.",
-      "source": "./pstack",
+      "source": "./harness/pstack/droid",
       "category": "engineering"
     }
   ]

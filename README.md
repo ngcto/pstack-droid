@@ -36,6 +36,18 @@ Droid children cannot spawn Task, so the parent owns flattened dispatch graphs. 
 
 See [Droid setup and usage](pstack/README-DROID.md), [harness contract](pstack/DROID-ADAPTER.md), [actual validation and skips](pstack/VALIDATION.md), and the original [upstream guide](pstack/docs/guide/README.md). Source attribution and licenses remain in the plugin and pristine tree.
 
+## Generated harness tree
+
+The marketplace installs `harness/pstack/droid/`, not the source/maintenance tree. It is generated from the complete pinned upstream snapshot plus one Droid adapter, native manifest/role frontmatter, licensed deslop, and the reviewed worktree safety overlay. Unlike upstream's Claude export, this export retains assets and dormant automations to satisfy full-source retention. Source provenance stays outside the installed plugin.
+
+```sh
+python scripts/generate-pstack-harness-trees.py
+python scripts/generate-pstack-harness-trees.py --check
+python tests/test_generation.py
+```
+
+The generator classifies harness terms across each skill and its supporting Markdown, checks adapter coverage, validates names/relative links, preserves executable modes, and rejects generated-file drift. Edit sources, regenerate, and commit the output; do not hand-edit the generated plugin. Model routing remains native and user-owned.
+
 ## Offline checks
 
 ```sh
