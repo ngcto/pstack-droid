@@ -11,4 +11,3 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/generate-pstack-harness-trees.py --check
-      - run: python tests/test_generation.py

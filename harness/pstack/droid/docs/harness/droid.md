@@ -15,7 +15,7 @@ Read this file once per session before following a pstack workflow. Keep the ori
 | control-ui | Built-in agent-browser via Skill for browser/Electron. Prefer Droid's embedded driver. |
 | formal QA, recordings, demos, native desktop | Official droid-control skill; read its routed atom files, not invented atom skill names. |
 | Cursor create-skill | Official skill-creation from droid-evolved; native /create-skill is a reviewed interactive wizard, not an automatic worker approval. |
-| deslop from cursor-team-kit | Bundled deslop. |
+| deslop from cursor-team-kit | External upstream dependency, not bundled here. If absent, perform its requested diff cleanup with native tools and disclose the fallback. |
 
 ## Subagent fields and models
 
@@ -52,6 +52,5 @@ Use native Loop/automation tools only when their current schema supports the exa
 
 Use the forge commands the workflow gives (gh/Origin), with exact-head review and user authorization. Bugbot comments remain real review threads, not renamed Factory checks. Native project artifacts can retain notes/ownership/evidence; Cursor Project-store/event APIs are not invented. Flatten nested coordination without dropping independent review roles. Missing mandatory verification is incomplete, not passed.
 
-## Scripts and preservation
 
-Original scripts/payloads remain adjacent and complete. Use scripts/pstack-droid.py to stage a separate writable execution copy before dependency installation; pristine assets/upstream is never executed or modified. worktree-audit accepts only an explicitly scoped transcript directory and holds unknown recency. The verifier checks preserved source bytes/file sets and native packaging, not logged-in behavioral equivalence.
+Original scripts are unchanged. Inspect them before running; a script that assumes Cursor transcripts must not scan unrelated histories or classify missing Droid activity as safe cleanup.

@@ -1,68 +1,33 @@
-# Pstack for Factory Droid
+# Pstack for Droid
 
-Native Droid plugin port of [pstack](https://github.com/cursor/plugins/tree/main/pstack), preserving its complete engineering workflows, payloads, tests, guides and MIT licensing. Upstream snapshot: `4dd1d05818d19792e7cd6e818f1667f95f7e1dbe` (pstack 0.15.36).
+Factory Droid harness generated from [pstack](https://github.com/cursor/plugins/tree/main/pstack), pinned at `4dd1d05818d19792e7cd6e818f1667f95f7e1dbe`. Original MIT licensing and workflows are retained.
 
-## Install from GitHub
-
-Install and authenticate the [Droid CLI](https://docs.factory.com/droid-cli/quickstart), then:
+## Install
 
 ```sh
 droid plugin marketplace add https://github.com/ngcto/pstack-droid
-droid plugin marketplace list
 droid plugin install pstack@pstack-droid --scope user
+```
+
+For formal QA/demo and skill-authoring routes, install the official dependencies:
+
+```sh
 droid plugin marketplace add https://github.com/Factory-AI/factory-plugins
 droid plugin install droid-control@factory-plugins --scope user
 droid plugin install droid-evolved@factory-plugins --scope user
-droid plugin list --scope user
 ```
 
-The GitHub source registers as `pstack-droid`. If you pin a tag/SHA, read the registered marketplace name back and substitute it. No plugin-manager dependency resolver is assumed; install the two official dependencies explicitly.
+Invoke `/poteto-mode` or an individual skill. Models remain configured through Droid's native Subagents settings. No provider-specific droids or model registry are shipped.
 
-In a new Droid session inspect `/plugins`, `/skills`, `/droids`, `/diagnostics`. Invoke `/poteto-mode`, `/poteto-help`, or an individual workflow. Configure model-role preferences with `/setup-pstack` after login.
+## Generate
 
-## What is included
-
-- All 58 original top-level pstack skills and their adjacent support files.
-- One addition: complete licensed `deslop`. Native control and authoring routes live in one shared adapter, not wrapper skills.
-- Two original specialized role droids, both inheriting user-configured native subagent routing. No provider-specific droids are shipped.
-- All 573 pinned upstream files unchanged in a separate pristine tree, including guides/images, fixtures and dormant Benny pack.
-- An explicit Droid harness adaptation, preservation verifier, separate writable execution staging and offline tests.
-
-Ordinary terminal/browser work prefers Droid's built-in `tuistory` and `agent-browser`. Formal QA, recordings, demos and native desktop work uses official `droid-control`. Atom files are read on demand; they are not invented skill identifiers.
-
-## Preservation is not runtime equivalence
-
-Droid children cannot spawn Task, so the parent owns flattened dispatch graphs. Cursor Task model/cloud fields and effort-bearing model slugs are translated to native role droids and explicit isolation decisions. No automatic cloud VM, Cursor Project store, event subscription or credential API is claimed. Benny is preserved but not activated. Source autonomy wording never expands user authorization.
-
-See [Droid setup and usage](harness/pstack/droid/README-DROID.md), [harness contract](adapters/droid/DROID-ADAPTER.md), [actual validation and skips](adapters/droid/VALIDATION.md), and the original [upstream guide](upstream/pstack/docs/guide/README.md). Source attribution and licenses remain in the plugin and pristine tree.
-
-## Generated harness tree
-
-The marketplace installs `harness/pstack/droid/`, not the source/maintenance tree. It is generated from the complete pinned upstream snapshot plus one Droid adapter, native manifest/role frontmatter, licensed deslop, and the reviewed worktree safety overlay. Unlike upstream's Claude export, this export retains assets and dormant automations to satisfy full-source retention. Source provenance stays outside the installed plugin.
+Like upstream's Claude Code export, the installable harness is generated rather than hand-maintained:
 
 ```sh
 python scripts/generate-pstack-harness-trees.py
 python scripts/generate-pstack-harness-trees.py --check
-python tests/test_generation.py
 ```
 
-The generator classifies harness terms across each skill and its supporting Markdown, checks adapter coverage, validates names/relative links, preserves executable modes, and rejects generated-file drift. Edit sources, regenerate, and commit the output; do not hand-edit the generated plugin. Model routing remains native and user-owned.
+Edit `upstream/pstack/` sources and `upstream/pstack/docs/harness/droid.md`, regenerate, and commit `harness/pstack/droid/`. The marketplace installs only that generated directory. Unlike the Claude export, original assets and dormant automations are retained as requested.
 
-## Offline checks
-
-```sh
-python harness/pstack/droid/scripts/pstack-droid.py verify
-python tests/test_generation.py
-```
-
-These prove packaging/adapter checks, not authenticated model behavior. Real coding and multi-model integration await user login and account entitlement. No secrets, login state, private session history, or runtime dependencies are distributed.
-
-## Repository layout
-
-- `upstream/`: pinned original source and licenses.
-- `adapters/droid/`: shared adapter and necessary compatibility overlays.
-- `scripts/`: deterministic generator.
-- `harness/pstack/droid/`: generated installable plugin.
-- `tests/`: generation, preservation and drift checks.
-
-There is no root `pstack/` port copy.
+The generator checks selective adapter coverage, skill identity, links, bytes, file modes and generated-tree drift. No custom runtime verifier, wrapper skills, duplicate adapter tree or added cleanup helper is bundled. The adapter translates native tools/fields and names unsupported gates explicitly. Model-backed execution remains untested until login.

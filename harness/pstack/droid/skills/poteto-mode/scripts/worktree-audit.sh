@@ -69,11 +69,9 @@ elif raw=$(gh pr list --author "@me" --state all --limit 1000 \
 fi
 [ -s "$prs" ] || echo "[]" > "$prs"
 
-# Only an explicitly workspace-scoped transcript directory may be inspected.
-transcripts="${PSTACK_DROID_TRANSCRIPTS_DIR:-}"
-if [ -z "$transcripts" ]; then
-    echo "warn: transcript recency is UNKNOWN; no deletion is authorized by this audit" >&2
-fi
+# Transcripts dir: ~/.cursor/projects/<slugified-repo-path>/agent-transcripts.
+slug=$(printf '%s' "$main_wt" | sed 's#^/##; s#/#-#g')
+transcripts="$HOME/.cursor/projects/$slug/agent-transcripts"
 now=$(date +%s)
 
 echo "# base: $base"
@@ -124,9 +122,7 @@ git worktree list --porcelain | awk '/^worktree /{print $2}' | while read -r wt;
 	case "$dirty" in wip:*) bucket=hold-wip ;; *)
 		case "$pr" in */open|*/draft) bucket=hold-open-pr ;; *)
 			if [ "$recent" = yes ]; then bucket=verify-recent-chat
-			elif [ "$merged" = YES ] || [ "$pr" != "-" ]; then
-                if [ -n "$transcripts" ] && [ -d "$transcripts" ]; then bucket=safe
-                else bucket=hold-unknown-recency; fi
+			elif [ "$merged" = YES ] || [ "$pr" != "-" ]; then bucket=safe
 			else bucket=review; fi ;;
 		esac ;;
 	esac
