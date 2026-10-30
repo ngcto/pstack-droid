@@ -6,8 +6,6 @@ disable-model-invocation: true
 
 # Correct
 
-In Droid, read [the Droid adapter](../../docs/harness/droid.md) once per session before following this skill. It maps the original harness names to native Droid features.
-
 The operator keeps correcting agents in this repo for the same mistakes. Change the repo so the next agent can't make them.
 
 Assume every contributor is an agent that sees only the files it opened, copies the nearest example, and takes the shortest path that compiles. Design the repo so a change that looks right from one file is right for the whole repo.

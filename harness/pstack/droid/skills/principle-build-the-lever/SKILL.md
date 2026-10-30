@@ -5,8 +5,6 @@ disable-model-invocation: true
 ---
 # Build the Lever
 
-In Droid, read [the Droid adapter](../../docs/harness/droid.md) once per session before following this skill. It maps the original harness names to native Droid features.
-
 When the work isn't trivial, build the tool that does it instead of doing it by hand.
 
 A codemod, generator, or script does the work the same way every time and reruns for free. The tool is one artifact a reviewer can read and rerun to check the work. Hand-done changes can only be re-verified by redoing them. A deterministic script turns "trust me" into "run this".

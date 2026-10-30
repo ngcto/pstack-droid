@@ -7,8 +7,6 @@ disable-model-invocation: true
 
 # TypeScript best practices
 
-In Droid, read [the Droid adapter](../../docs/harness/droid.md) once per session before following this skill. It maps the original harness names to native Droid features.
-
 Apply the **type-system-discipline** principle skill first.
 
 | Rule | Summary |

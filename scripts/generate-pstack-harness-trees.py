@@ -16,29 +16,28 @@ OUT = ROOT / 'harness/pstack/droid'
 ADAPTER = 'docs/harness/droid.md'
 REVISION = json.loads((PORT/'preservation-manifest.json').read_text())['revision']
 TERMS = {
-    'Task': r'\bTask\b',
+    'Task': r'`Task`|\bTask (tool|subagent|call)',
     'AskQuestion': r'AskQuestion',
     'todolist': r'\btodo ?list\b',
     'generalPurpose': r'generalPurpose',
     'poteto-agent': r'poteto-agent',
     'comment-sicko': r'comment-sicko',
-    'readonly': r'readonly',
-    'environment': r'environment:',
+    'readonly': r'readonly: (true|false)|readonly/Ask',
+    'environment': r'environment: "(cloud|local)"',
     'cloud_base_branch': r'cloud_base_branch',
     'run_in_background': r'run_in_background',
     'resume': r'`resume`',
     'file_attachments': r'file_attachments',
-    'provider slug': r'\b(?:claude-[a-z]+-\d|grok-\d|gpt-\d)',
+    'provider slug': r'\bclaude-[a-z]+-\d|\bgrok-\d|\bgpt-\d',
     'inherit-parent': r'inherit-parent',
     'pstack-models.mdc': r'pstack-models\.mdc',
     '.cursor/skills/': r'\.cursor/skills/',
-    '~/.cursor/plugins/': r'\.cursor/plugins/',
-    '.cursor-plugin/plugin.json': r'\.cursor-plugin/plugin.json',
-    '.cursor/rules/': r'\.cursor/rules/',
-    'agent-transcripts': r'agent-transcripts',
-    'Cursor-only features': r'Bugbot|Cursor [Aa]utomation|cloud agent|built-in PR tool',
-    'Run another pstack skill': r'the \*\*[^*]+\*\* skill|`/[a-z-]+`',
+    '~/.cursor/plugins/': r'\.cursor/plugins|\.cursor-plugin/',
+    '.cursor/rules/': r'\.cursor/rules|always-applied rule',
+    'agent-transcripts': r'agent-transcripts|\.cursor/projects/',
+    'Cursor-only features': r'Bugbot|Cursor [Aa]utomation|cursor\.(sh|com)/automations|[Cc]loud [Aa]gent|built-in PR tool',
 }
+
 LINK = re.compile(r'\]\(([^)\s]+)\)')
 
 
@@ -85,9 +84,13 @@ def render():
         if not found or found[1].strip(' \"\'') != name or not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*',name) or len(name)>64:
             problems.append(f'Invalid source skill identity: {name}')
         subtree = '\n'.join(p.read_text() for p in walk(path.parent) if p.suffix=='.md')
-        used = [key for key,pattern in TERMS.items() if re.search(pattern,subtree,re.I)]
+        used = [key for key,pattern in TERMS.items() if re.search(pattern,subtree, re.I if key == 'todolist' else 0)]
+        others = '|'.join(re.escape(p.parent.name) for p in (SOURCE/'skills').glob('*/SKILL.md') if p.parent.name != name)
+        route = re.compile(r'the \*\*(?P<bold>'+others+r')\*\* skill|`/(?P<command>'+others+r')`')
+        if any(any('(../'+(m.group('bold') or m.group('command'))+'/' not in line for m in route.finditer(line)) for line in subtree.splitlines()):
+            used.append('Run another pstack skill')
         classifications[name] = used
-        if used:
+        if used and re.search(r'^# ', text, re.M):
             for key in used:
                 if coverage.get(key, key) not in adapter_text:
                     problems.append(f'Missing adapter mapping: {key}, used by {name}')

@@ -42,13 +42,15 @@
     "skills/benchmark-checklist/SKILL.md": "ba109e96c8f6c1c391baccf19e5d11e14370df7b3f2605e1572cd565a6c0fca0",
     "skills/blast-radius/SKILL.md": "2e10745b97f5862323dcda3b29ca60d56b5c3c98e37020085d26b48efbe0a436",
     "skills/bro/SKILL.md": "aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb",
+    "skills/correct/SKILL.md": "e347045d00c967a0b831ef883cc6ac79d21329aa10b5968637df95de7febf0ba",
     "skills/create-verification-skill/references/feature-map-example/README.md": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba",
     "skills/create-verification-skill/references/feature-map-example/create-note.md": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7",
     "skills/create-verification-skill/references/feature-map-example/search.md": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823",
     "skills/how/references/explainer-prompt.md": "ddb89cebefc24e2b54517a331aedfe045b6971e101f45c71b8cef4cccff45bff",
     "skills/how/references/explorer-prompt.md": "6300128385ee940fd42ecb84b0e623435440a2dc283eae54ee4a52ba56947ba1",
     "skills/in-your-own-words/SKILL.md": "fa8ba74e27d7be371dc270ec78bbf816411477d0dfab185356c861ac8dd413ad",
-    "skills/make-bot-ui/SKILL.md": "ad19d0bc6764287ec08c2521701974e7dac941f72e4d0fe81a24f4614494586f",
+    "skills/ketchup/SKILL.md": "f2923ffd14f6fc778f75a47aaed1f317fb5fd00b5701ca769d6446c74106dead",
+    "skills/ketchup-video/SKILL.md": "027aed9a01adf208aeac3a134f47d12f7c1e42d6fea03095aedc2bae58cdcfd1",
     "skills/poteto-help/references/prompting.md": "463f450c44a60afd001a2f69fdf8a5dea174351f339369b12ec3c41515e564d3",
     "skills/poteto-help/references/recipes.md": "5323aca73a39a3b607c2bb22cd33551fe893563dfd4b104df838da010e9fc702",
     "skills/poteto-mode/playbooks/authoring-a-skill.md": "f6a13a445c360b48d6cd72780ac01955f45b82826476efe0e67c7559329407aa",
@@ -94,9 +96,11 @@
     "skills/poteto-mode/scripts/watch-pr/watch-pr": "d955603be6cc0e8b8ffcec722f635192b2261410b1f2929abea94480e47eb5d4",
     "skills/principle-attack-the-premise/SKILL.md": "6a932884daad4aa189e9b5d1665226bbc75621d4d2a398fd4003bebd382f4599",
     "skills/principle-boundary-discipline/SKILL.md": "62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28",
+    "skills/principle-build-the-lever/SKILL.md": "3434b0ad0c640c6f1d7960be7a8986c3bcdc14e26060360dec29903df60074ff",
     "skills/principle-encode-lessons-in-structure/SKILL.md": "228963799189f481827d6f28065f278bc2008ffa37030b1234cbd5814d36b9e9",
     "skills/principle-exhaust-the-design-space/SKILL.md": "2de83d99f93f60ec6313455b0bc9aa9f0bfb93dd59f414f403691322db00d4db",
     "skills/principle-experience-first/SKILL.md": "58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b",
+    "skills/principle-explain-the-number/SKILL.md": "3c84fbf9a7d9842abcfcd134010782b32092ac3d3fb4aaf9ed5732dca83aa58c",
     "skills/principle-fix-root-causes/SKILL.md": "8df3c8c3fe57eb0055a5c8efab8ab144557fdf301da70b1cdc77a3a3ef3f3052",
     "skills/principle-foundational-thinking/SKILL.md": "864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2",
     "skills/principle-guard-the-context-window/SKILL.md": "af0b9dd70b43628ce4a59a4d332e9d9ad055084e460f430e7a757495c627e81a",
@@ -117,6 +121,7 @@
     "skills/reflect/references/judgment-reviewer.md": "38f917619fbf346062d643e0ad6b12fc952d58678dfcbbf42ffcf6d8b9c08307",
     "skills/reflect/references/synthesizer.md": "6af816963de74d1a1aef4070273c1ff533d2072732e488e159ddc0b299fec3cd",
     "skills/reflect/references/tooling-reviewer.md": "f81b8697e7366fbbc18feba52c6e3253a101f751091364ebc4396a1d9b5753b4",
+    "skills/sharpen/SKILL.md": "563dfc460c605d311e650726288e2f1cbd61eab817db178d6e7e29643e07e7a2",
     "skills/show-me-your-work/references/decision-log-template.tsv": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76",
     "skills/show-me-your-work/scripts/log.sh": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e",
     "skills/statechart/SKILL.md": "010b7b4532406739b1c3a426d1a45f02bb618a42561fc96b3976e064a7f8384d",
@@ -527,6 +532,7 @@
     "skills/statechart/scripts/tsconfig.json": "6bb2af53f7b251328e6117cd4fb761468dc4d4b96085d31a19304ccb73c32cc1",
     "skills/statechart/scripts/worker.ts": "1f18ed5ef806982e05e8a40fc217e88257700b28b63cb4acbd647872f85f782b",
     "skills/tdd/SKILL.md": "eeb868e2dfebee528d730a67d7b17498fac4bb85dec2e38bc5c5176aca4d5d2f",
+    "skills/typescript-best-practices/SKILL.md": "ec1dac086d3708e5940d45d250c30a37dd953b4e3cb2ca0692f5851d7a039e27",
     "skills/typescript-best-practices/references/patterns.md": "12e70c9419a8b3f5d6a1ab80e272c1f00a43ac0b3bbf72d68199033570e5de77",
     "skills/unslop/SKILL.md": "ccab208e315ce05e2fab8eeee2f7879f1289b5c6844840b2d307adf31c79144f",
     "skills/why/references/epistemics.md": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758",
@@ -544,7 +550,6 @@
   },
   "skill_classifications": {
     "architect": [
-      "Task",
       "todolist",
       "provider slug",
       "pstack-models.mdc",
@@ -553,7 +558,6 @@
     "arena": [
       "Task",
       "todolist",
-      "readonly",
       "run_in_background",
       "provider slug",
       "inherit-parent",
@@ -562,7 +566,6 @@
       "Run another pstack skill"
     ],
     "automate-me": [
-      "Task",
       "AskQuestion",
       ".cursor/skills/",
       "agent-transcripts",
@@ -571,19 +574,15 @@
     "benchmark-checklist": [],
     "blast-radius": [],
     "bro": [],
-    "correct": [
-      "Task"
-    ],
+    "correct": [],
     "create-formal-verification-skill": [
       "Run another pstack skill"
     ],
     "create-verification-skill": [
-      "Task",
       ".cursor/skills/",
       "Run another pstack skill"
     ],
     "figure-it-out": [
-      "Task",
       "todolist",
       "Run another pstack skill"
     ],
@@ -598,17 +597,11 @@
     ],
     "in-your-own-words": [],
     "interrogate": [
-      "Task",
       "generalPurpose",
       "Run another pstack skill"
     ],
-    "ketchup": [
-      "Task",
-      "Run another pstack skill"
-    ],
-    "ketchup-video": [
-      "Run another pstack skill"
-    ],
+    "ketchup": [],
+    "ketchup-video": [],
     "maintain-formal-verification-skill": [
       "Run another pstack skill"
     ],
@@ -616,14 +609,15 @@
       ".cursor/skills/",
       "Run another pstack skill"
     ],
-    "make-bot-ui": [],
+    "make-bot-ui": [
+      "Cursor-only features"
+    ],
     "no-comments": [
       "Task",
       "comment-sicko",
       "Run another pstack skill"
     ],
     "poteto-help": [
-      "Task",
       "todolist",
       "poteto-agent",
       "inherit-parent",
@@ -637,7 +631,6 @@
       "AskQuestion",
       "todolist",
       "poteto-agent",
-      "readonly",
       "environment",
       "run_in_background",
       "provider slug",
@@ -648,15 +641,11 @@
     ],
     "principle-attack-the-premise": [],
     "principle-boundary-discipline": [],
-    "principle-build-the-lever": [
-      "Task"
-    ],
+    "principle-build-the-lever": [],
     "principle-encode-lessons-in-structure": [],
     "principle-exhaust-the-design-space": [],
     "principle-experience-first": [],
-    "principle-explain-the-number": [
-      "Task"
-    ],
+    "principle-explain-the-number": [],
     "principle-fix-root-causes": [],
     "principle-foundational-thinking": [],
     "principle-guard-the-context-window": [],
@@ -668,7 +657,6 @@
     "principle-never-block-on-the-human": [],
     "principle-outcome-oriented-execution": [],
     "principle-prove-it-works": [
-      "Task",
       "Run another pstack skill"
     ],
     "principle-redesign-from-first-principles": [],
@@ -678,7 +666,6 @@
     "principle-test-behavior-not-implementation": [],
     "principle-type-system-discipline": [],
     "recall": [
-      "Task",
       "agent-transcripts",
       "Run another pstack skill"
     ],
@@ -704,11 +691,8 @@
       ".cursor/rules/",
       "Run another pstack skill"
     ],
-    "sharpen": [
-      "Task"
-    ],
+    "sharpen": [],
     "show-me-your-work": [
-      "Task",
       "agent-transcripts",
       "Run another pstack skill"
     ],
@@ -731,12 +715,9 @@
       "Run another pstack skill"
     ],
     "technical-writing": [
-      "Task",
       "Run another pstack skill"
     ],
-    "typescript-best-practices": [
-      "readonly"
-    ],
+    "typescript-best-practices": [],
     "unslop": [],
     "why": [
       "Task",
