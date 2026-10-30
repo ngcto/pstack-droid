@@ -1,0 +1,14 @@
+{
+  "name": "pstack-droid",
+  "owner": {
+    "name": "Hermes"
+  },
+  "plugins": [
+    {
+      "name": "pstack",
+      "description": "Full pstack workflows adapted for the Factory Droid harness.",
+      "source": "./pstack",
+      "category": "engineering"
+    }
+  ]
+}
