@@ -1,55 +1,57 @@
-# Pstack on Factory Droid
+# Pstack in Droid
 
-This file is the operative harness translation for every bundled workflow. The full upstream pstack snapshot remains under assets/upstream/pstack and is not the executable instruction source. Active skills retain original steps and payloads plus narrowly scoped adaptations. License and upstream authorship remain intact.
+Read this file once per session before following a pstack workflow. Keep the original workflow steps and evidence requirements; translate only the harness names below. `<pstack>` is the installed plugin root. User authorization and Droid safety policy override source autonomy wording. Never send fields absent from the current tool schema.
 
-## Authority and evidence
+## Tools and skill routes
 
-User authorization and Droid safety policy govern every action. Pstack's autonomy prose does not authorize messages, tickets, deployments, merges, pushes, destructive cleanup, provider configuration, or recurring jobs that the user did not request. Preserve every mandatory gate and original skip exception. Never turn a missing capability into a pass. A copied source tree is not proof of runtime equivalence.
+| Cursor | Droid |
+| --- | --- |
+| Task | Task; the parent owns fan-out because Droid children cannot spawn Task. A child returns the needed worker plan/questions to its parent. |
+| AskQuestion | AskUser in the interactive parent; children report questions instead. |
+| Shell/Bash | Execute. Shell cwd/env do not persist between calls; include setup and use together. |
+| todolist | TodoWrite, with the original gates and explicit skips. |
+| another pstack skill | Read `<pstack>/skills/<name>/SKILL.md` in full, then follow it; Skill when the effective catalog supports invocation. |
+| control-cli | Built-in tuistory via Skill for TUI; Execute for ordinary command output. |
+| control-ui | Built-in agent-browser via Skill for browser/Electron. Prefer Droid's embedded driver. |
+| formal QA, recordings, demos, native desktop | Official droid-control skill; read its routed atom files, not invented atom skill names. |
+| Cursor create-skill | Official skill-creation from droid-evolved; native /create-skill is a reviewed interactive wizard, not an automatic worker approval. |
+| deslop from cursor-team-kit | Bundled deslop. |
 
-## Loading and paths
+## Subagent fields and models
 
-Use Skill for registered skills, Read for full files and payloads. Resolve DROID_PLUGIN_ROOT once in the parent. Pass absolute plugin, poteto-mode, leaf/payload and working-checkout paths to each worker. Supporting files do not expand plugin-root variables. The active skills tree retains sibling-relative links, prompts, playbooks, fixtures, binaries and tests. The original docs are historical context; instructions about installing Cursor or editing Cursor configuration are not active setup instructions.
+| Cursor | Droid |
+| --- | --- |
+| generalPurpose | worker; explorer for source-only read-only exploration. |
+| poteto-agent, comment-sicko | Original specialized droids of those names, model: inherit. |
+| readonly: true/false | Drop field. Explorer enforces read-only; worker briefs retain exact scope/no-write constraints where command/MCP evidence is needed. |
+| model, effort-bearing provider slug, fast setting | Drop field/value. User configures native `/settings` → Subagents; select Task complexity light/medium/heavy by difficulty. No provider-specific droids or custom model ledger. |
+| per-role model rule / pstack-models.mdc | Native Subagents configuration, not an installed rule file. Panel count/roles remain; model diversity needs actual resolved-family evidence. Report unavailable diversity, use only the original permitted fallback. |
+| environment: cloud/local, cloud_base_branch | Drop fields. Parent provisions/passes isolated worktrees at the exact branch/SHA; a worktree is not a fresh cloud VM. A strict fresh-machine gate requires a configured authorized environment or remains blocked. |
+| run_in_background | Follow actual Task schema; current CLI delivers background completion reports automatically. Launch ID is not a result; do not busy-poll TaskOutput. |
+| resume | Actual prior Task ID, only when needed by original fresh-worker rules. |
+| file_attachments | Absolute file pointers; image_paths for images when supported. |
 
-## Native tools
+## setup-pstack
 
-- Shell/Bash means Execute. Execute shell/cwd/environment does not persist between calls; include setup and actual command in the same call, or use absolute paths/git -C.
-- AskQuestion means AskUser in the parent. Subagents cannot ask; return genuine decisions to the parent, do not invent answers.
-- File read/search/write means Read/Grep/Glob/Create/Edit/ApplyPatch according to current schemas. TodoWrite tracks all original gates and explicit skips. Read images for evidence; do not invent a separate image-inspection API.
-- Skills' allowed-tools is metadata, not a sandbox. Custom droid tool policy and runtime autonomy are the actual restrictions.
-- For ordinary TUI/browser work prefer built-in `tuistory` and `agent-browser` skills via Skill; neither is a builtin slash command. Droid embeds/version-matches agent-browser and provisions it on Execute. Use official `droid-control` for formal QA, claim evidence, recordings/demos and desktop control. control-cli/control-ui route accordingly, not to copied Cursor drivers. Read terminal-use/browser-use/desktop-use atoms as files, not Skill names. Terminal recordings use the plugin's tctl; browser uses agent-browser. Real terminal-rendering/byte claims require true-input/pty-capture rather than a text snapshot.
-- Authoring uses official skill-creation from droid-evolved. The create-skill wrapper preserves old caller references. Native /create-skill is an interactive wizard and cannot be silently approved inside a worker.
-- deslop is imported under its MIT license from the same pinned cursor/plugins revision, retaining the exact workflow.
+Follow the original setup intent using native `/settings` → Subagents Light/Medium/Heavy model, effort and autonomy choices. Preserve existing user preferences unless asked to configure them. No .mdc rule, JSON role ledger or model-specific droid is created. Confirm actual user-chosen routing after login; advertised model choices are not entitlement proof. Retain the original optional project verification and formal-verification offers.
 
-## Delegation and model translation
+## Paths, transcripts and source docs
 
-Task only accepts fields exposed by the installed schema. Do not send Cursor model, readonly, environment, or foreground controls. Choose subagent_type for enforced tools/model. Current CLI 1.0.0 Task is background and delivers completed reports automatically; stop a running task with TaskStop. Use TaskOutput only for a necessary progress peek or finished report, not a busy wait. Tool schema wins over documentation from another release.
+| Cursor | Droid |
+| --- | --- |
+| .cursor/skills/, ~/.cursor/skills/ | .factory/skills/, ~/.factory/skills/. |
+| ~/.cursor/plugins/, .cursor-plugin/plugin.json | Parent supplies the exact active plugin path; native .factory-plugin/plugin.json. Do not pick an arbitrary highest-version cache. |
+| always-applied .mdc rules | Applicable AGENTS.md guidance or native settings, depending on intent; never claim Droid reads .mdc. |
+| Cursor agent-transcripts layout / parser | Native session metadata/search/export in the current workspace and named session only. Inspect the actual schema; never guess a path or scan unrelated chats. Use digest fallback only where the original permits it; otherwise missing full trace is a blocker. |
+| Cursor custom-mode persistence/hotkeys | Explicitly invoke the skill for the new task; do not promise sticky mode or unsupported shortcuts. |
+| copied Cursor setup/guide commands | Historical source guidance; use README-DROID.md and native plugin manager for installation. |
 
-Use Droid built-in `worker` for implementation, adversarial repros and evidence gathering that needs commands/MCP; use `explorer` for source-only read-only exploration. Select `complexity: light|medium|heavy` for task difficulty; actual models/reasoning come from the user’s native `/settings` → Subagents configuration. Pass complete original role prompts, skill/payload paths and scope constraints. Never pin a provider/model or create model-specific custom droids/role ledgers. Preserve panel seat counts and ordered judge selection; record actual model families when a gate needs diversity, and report the gate unavailable if native routing does not supply it. The two original specialized role droids inherit native routing.
+## Host-specific features
 
-Original `poteto-agent` and `comment-sicko` retain role contracts with `model: inherit`; no explicit reasoning effort or provider preference is installed. Task complexity uses the user’s Light/Medium/Heavy models, and organization policy remains authoritative. `/setup-pstack` helps the user inspect/configure native Subagents settings rather than generating model definitions. Inherited defaults do not prove diverse-family review.
+Use native Loop/automation tools only when their current schema supports the exact user-authorized workflow. Installation does not activate Benny, schedules, remote control or external writes. Cursor update_state, SendToUser secret requests, api2.cursor.sh receiver URLs, auth headers and payload schemas have no automatic mapping. Retain webhook/Slack safety gates and stop at missing protected-secret provisioning or unverified delivery contracts, not a guessed API.
 
-## Nested orchestration and isolation
+Use the forge commands the workflow gives (gh/Origin), with exact-head review and user authorization. Bugbot comments remain real review threads, not renamed Factory checks. Native project artifacts can retain notes/ownership/evidence; Cursor Project-store/event APIs are not invented. Flatten nested coordination without dropping independent review roles. Missing mandatory verification is incomplete, not passed.
 
-Droid Task subagents cannot spawn Task. Flatten requested sub-coordinator topology: the parent owns all dispatches, receives each bounded coordinator plan as an artifact, and launches its workers itself. Preserve role ownership and the three-level conceptual ledger without claiming nested execution. If a workflow strictly requires autonomous nested dispatch, report the limitation instead of silently dropping it.
+## Scripts and preservation
 
-Task does not create cloud VMs or isolated checkouts. Parent creates a separate git worktree per concurrent writer before dispatch and passes its path. A worktree is not OS/credential isolation. When the original gate requires a fresh cloud VM, use a configured Factory computer/environment or explicitly authorized disposable container. If none exists, report that gate blocked. Never label local worktree proof cloud isolation.
-
-Cursor Project store/tracker becomes owned project artifacts, for example notes.md and a worker ledger tracking scope, branch, head, model, task_id, outputs and disposition. Preserve original schemas when specified. Missing cross-session event subscriptions are not invented: use native session/PR tools if present, otherwise obey the original no-polling rule and report the supervision gap. Scheduled work may use native Loop/CreateAutomation only with explicit user scheduling authorization. No daemon, loop or automation is enabled by installing this plugin.
-
-## Transcript privacy and resumption
-
-Use native session-navigation when available, or droid search in the active repository with explicit topic/window and limits. Inspect only this workspace and named session IDs. Droid sessions do not use Cursor's agent-transcripts layout or message.content[0].text parser. Resolve actual session files through native session metadata/schema, not a guessed workspace slug. Full chain-following eval evidence needs actual tool events; a tight digest is allowed only where the original workflow explicitly permits it. Otherwise report missing transcript evidence.
-
-Session pickup uses droid --resume or exec --session-id with a saved real ID. Fork only when the task needs inherited state; capture branch/cwd/partial changes independently. Before cleanup, missing transcript recency is UNKNOWN, never proof inactivity.
-
-## Preserved machinery and dependencies
-
-All original support code, test corpora, shell helpers, guide chapters/images and dormant Benny workflows are retained. Original scripts must be inspected before execution. Bun tools require their pinned frozen lock dependencies; statechart Node tools require fast-check, Java/TLC for formal-model gates, and optional rendering tools. Do not install dependencies inside assets/upstream.
-
-Invoke scripts via the additive scripts/pstack-droid.py helper, which copies runnable trees to a separate user-owned execution directory before dependency installation. It is not a sandbox. Arguments and side effects remain the original script's contract. check-plan and watch-pr are local source tooling, not Cursor APIs. worktree-audit is adapted to accept explicitly scoped Droid transcript directories; no default global/private session scan is allowed.
-
-Benny is preserved under automations/benny. Its Cursor cloud configuration is not a deployed Factory automation. A future activation must translate trigger, authorized tools, credentials, machine/environment, schedule and delivery with exact readback. Installation does not activate it.
-
-## Verification boundaries
-
-Run scripts/pstack-droid.py verify for original hashes, complete file sets, active skill links and droid frontmatter. Run preserved unit suites from the isolated execution copy. Verify plugin installation with droid plugin list and the installed cache manifest. After user login, inspect /skills, /droids, /diagnostics and execute a disposable coding task with real tests plus a two-family Task panel. Never call offline discovery authenticated behavioral equivalence.
+Original scripts/payloads remain adjacent and complete. Use scripts/pstack-droid.py to stage a separate writable execution copy before dependency installation; pristine assets/upstream is never executed or modified. worktree-audit accepts only an explicitly scoped transcript directory and holds unknown recency. The verifier checks preserved source bytes/file sets and native packaging, not logged-in behavioral equivalence.

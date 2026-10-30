@@ -23,7 +23,7 @@ In a new Droid session inspect `/plugins`, `/skills`, `/droids`, `/diagnostics`.
 ## What is included
 
 - All 58 original top-level pstack skills and their adjacent support files.
-- Four additions: licensed `deslop`, native `control-cli`, `control-ui`, and skill-authoring bridge.
+- One addition: complete licensed `deslop`. Native control and authoring routes live in one shared adapter, not wrapper skills.
 - Two original specialized role droids, both inheriting user-configured native subagent routing. No provider-specific droids are shipped.
 - All 573 pinned upstream files unchanged in a separate pristine tree, including guides/images, fixtures and dormant Benny pack.
 - An explicit Droid harness adaptation, preservation verifier, separate writable execution staging and offline tests.

@@ -41,9 +41,12 @@ class PortTests(unittest.TestCase):
         self.assertNotIn('$HOME/.cursor/projects/', text)
 
     def test_native_control_and_authoring_routes(self):
-        for name in ('control-cli','control-ui'):
-            self.assertIn('`droid-control`', (ROOT/f'skills/{name}/SKILL.md').read_text())
-        self.assertIn('`skill-creation`', (ROOT/'skills/create-skill/SKILL.md').read_text())
+        text = (ROOT/'DROID-ADAPTER.md').read_text()
+        for name in ('tuistory', 'agent-browser', 'droid-control', 'skill-creation'):
+            self.assertIn(name, text)
+        self.assertFalse((ROOT/'skills/control-cli').exists())
+        self.assertFalse((ROOT/'skills/control-ui').exists())
+        self.assertFalse((ROOT/'skills/create-skill').exists())
 
 if __name__ == '__main__':
     unittest.main()

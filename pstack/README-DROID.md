@@ -29,7 +29,7 @@ Native skill frontmatter preserves manual-only invocation where upstream declare
 - Every original source file is retained byte-for-byte under `assets/upstream/pstack/`, with SHA-256 inventory and revision in `preservation-manifest.json`.
 - Every original top-level skill has an active native entry, with the full workflow, supporting references, playbooks, scripts, fixtures, guide/image assets and dormant Benny configuration retained.
 - Cursor role agents become plugin `droids/`. Additional Claude/Grok/OpenAI role seats use separate real model/effort fields.
-- MIT deslop dependency is bundled from the same revision. control-cli/control-ui route to official Factory controls, rather than duplicating browser/terminal tooling. create-skill routes to official skill-creation.
+- MIT deslop dependency is bundled from the same revision. The shared adapter maps control-cli/control-ui to native Factory controls and create-skill to official skill-creation, without wrapper skills.
 - DROID-ADAPTER.md records exact translations and limits. Nested Task, Cursor cloud/environment arguments, Project store/event APIs and model-slug syntax are not falsely represented as Droid features.
 - Shipped pinned model IDs are advertised by this CLI but account entitlement and possible inherited-model fallback remain unverified until login.
 
