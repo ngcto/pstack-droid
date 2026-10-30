@@ -15,7 +15,7 @@ Read this file once per session before following a pstack workflow. Keep the ori
 | control-ui | Built-in agent-browser via Skill for browser/Electron. Prefer Droid's embedded driver. |
 | formal QA, recordings, demos, native desktop | Official droid-control skill; read its routed atom files, not invented atom skill names. |
 | Cursor create-skill | Official skill-creation from droid-evolved; native /create-skill is a reviewed interactive wizard, not an automatic worker approval. |
-| deslop from cursor-team-kit | External upstream dependency, not bundled here. If absent, perform its requested diff cleanup with native tools and disclose the fallback. |
+| deslop from cursor-team-kit | Bundled full licensed deslop skill; read skills/deslop/SKILL.md. |
 
 ## Subagent fields and models
 
